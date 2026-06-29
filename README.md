@@ -1,93 +1,137 @@
+<div align="center">
+
 # Egypt E-commerce Web Scrapers
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB)
-![Node.js](https://img.shields.io/badge/Node.js-20%2B-339933)
-![Scrapers](https://img.shields.io/badge/Scrapers-39-blue)
+### Production-minded product data collection for 39 Egyptian retailers
 
-A curated collection of 39 Python and JavaScript scrapers for Egyptian retail and e-commerce websites. Each retailer project provides one focused scraper, concise instructions, and 10 cleaned example records in a shared product schema.
+One focused scraper per retailer. One normalized sample schema. Clear setup and maintenance guidance.
 
-> [!IMPORTANT]
-> Website structures and policies change. Review the target website's terms, robots policy, and rate limits before running any scraper.
+[![MIT License](https://img.shields.io/github/license/belalhazem511/Ecommerce-Scrapping-Egypt-2026?style=for-the-badge&color=yellow)](LICENSE)
+[![Scrapers](https://img.shields.io/badge/Scrapers-39-2563EB?style=for-the-badge)](#scraper-catalog)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](#technology-stack)
+[![Node.js](https://img.shields.io/badge/Node.js-20%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](#technology-stack)
 
-## Features
+[![Last Commit](https://img.shields.io/github/last-commit/belalhazem511/Ecommerce-Scrapping-Egypt-2026?style=flat-square)](https://github.com/belalhazem511/Ecommerce-Scrapping-Egypt-2026/commits/main)
+[![Repository Size](https://img.shields.io/github/repo-size/belalhazem511/Ecommerce-Scrapping-Egypt-2026?style=flat-square)](https://github.com/belalhazem511/Ecommerce-Scrapping-Egypt-2026)
+[![Stars](https://img.shields.io/github/stars/belalhazem511/Ecommerce-Scrapping-Egypt-2026?style=flat-square)](https://github.com/belalhazem511/Ecommerce-Scrapping-Egypt-2026/stargazers)
 
-- **39 retailer projects:** independently runnable and easy to inspect
-- **Multiple extraction strategies:** HTML, public API, GraphQL, sitemap, storefront, and browser automation
-- **Static and dynamic support:** lightweight HTTP clients for static sources and browser engines for rendered pages
-- **Concurrent collection:** async requests or worker pools where supported by the target
-- **Pagination and discovery:** category, sitemap, search, and product URL workflows
-- **Normalized product examples:** the same 10-column sample contract in every project
-- **Data cleaning:** trimmed text, numeric price fields, URL validation, and duplicate removal
-- **Operational resilience:** timeouts, retry patterns, checkpoints, or resume behavior in applicable scrapers
-- **Source-control hygiene:** generated datasets, logs, caches, browser profiles, and secrets are excluded
-- **Project-level guidance:** every retailer folder documents requirements and execution
+[Explore Scrapers](#scraper-catalog) | [Quick Start](#quick-start) | [Data Schema](#normalized-data-contract) | [Technical Documentation](DOCUMENTATION.md)
 
-Feature availability varies by scraper because each website exposes different capabilities.
+</div>
 
-## Architecture
+---
+
+## Overview
+
+This repository is a curated collection of **39 independent Python and JavaScript web scrapers** for Egyptian retail and e-commerce websites. It covers electronics, grocery, furniture, sports, beauty, pharmacy, toys, stationery, and general marketplaces.
+
+Every retailer folder is intentionally simple:
+
+| Included | Purpose |
+|---|---|
+| Final scraper | One clear Python or JavaScript entry point |
+| Clean sample | Exactly 10 normalized example products |
+| Project README | Target-specific setup, usage, quality, and maintenance notes |
+
+Debug scripts, historical versions, full datasets, browser profiles, caches, and generated artifacts are excluded.
+
+## Why this repository?
+
+| Professional structure | Practical coverage | Consistent data |
+|---|---|---|
+| Isolated retailer projects with clear entry points | Multiple Egyptian retail sectors and extraction strategies | Shared product schema across all 39 samples |
+| Source-detected technology and capability documentation | Static HTML, APIs, GraphQL, sitemaps, and rendered pages | Clean prices, URLs, categories, brands, and availability |
+
+### Core features
+
+- **39 retailer-specific scrapers** with direct project links
+- **Multiple extraction strategies** for different website architectures
+- **Static and dynamic website support** through HTTP clients and browser automation
+- **Pagination and product discovery** through categories, search, APIs, and sitemaps
+- **Async or concurrent collection** where appropriate for the source
+- **Normalized sample data** with the same 10-column contract
+- **Data-quality guidance** for price, URL, encoding, and duplicate validation
+- **Responsible-use controls** covering rate limits, access restrictions, and secrets
+- **Minimal Git history noise** with generated outputs excluded
+- **MIT license** for clear reuse terms
+
+## Scraper catalog
+
+Every project name links directly to its folder and professional README.
+
+| Sector | Projects |
+|---|---|
+| **Electronics & Appliances** | [B.TECH](scrapers/btech) - [Cairo Sales](scrapers/cairosales) - [Compumarts](scrapers/compumarts) - [Dokkan Tech](scrapers/dokkantech) - [Dream 2000](scrapers/dream2000) - [Elfar](scrapers/elfar) - [Elghazawy](scrapers/elghazawy) - [Fresh](scrapers/fresh) - [Raya Shop](scrapers/raya) - [Sigma](scrapers/sigma) - [Tradeline](scrapers/tradeline) - [Unionaire](scrapers/unionaire) |
+| **Grocery & Supermarkets** | [Bashrety](scrapers/bashrety) - [CStore](scrapers/cstore) - [Gourmet Egypt](scrapers/gourmet) - [Hyper One](scrapers/hyperone) - [Meercato](scrapers/meercato) - [Metro Markets](scrapers/metro) - [Seoudi](scrapers/seoudi) - [Talabat](scrapers/talabat) |
+| **Furniture & Home** | [Ariika](scrapers/ariika) - [Ennap](scrapers/ennap) - [IKEA Egypt](scrapers/ikea) |
+| **Beauty & Pharmacy** | [EVA](scrapers/eva) - [Mazaya](scrapers/mazaya) - [Source Beauty](scrapers/sourcebeauty) - [Talabat Pharmacy](scrapers/talabat-pharmacy) - [Talabat Pharmacy - Zamalek](scrapers/talabat-pharmacy-2) - [The Beauty Secrets](scrapers/the-beauty) |
+| **Sports** | [Decathlon Egypt](scrapers/decathlon) - [GO Sport](scrapers/gosport) - [Intersport](scrapers/intersport) |
+| **Baby & Toys** | [Baby Island](scrapers/baby-island) - [Chicco](scrapers/chicco) - [Top Toys Egypt](scrapers/toptoys) |
+| **Stationery** | [Samir & Aly](scrapers/samiraly) |
+| **Marketplaces & Discovery** | [Kimo Store](scrapers/kimostore) - [Noon Egypt](scrapers/noon) - [InstaShop Mobile Discovery](scrapers/mobiletest) |
+
+## How it works
+
+```mermaid
+flowchart LR
+    A[Retail website or public API] --> B[Discovery]
+    B --> C[Pagination and collection]
+    C --> D[Product extraction]
+    D --> E[Normalization]
+    E --> F[Deduplication]
+    F --> G[CSV or JSON output]
+    G --> H[Quality validation]
+```
+
+The exact path varies by retailer. A scraper may use static HTML, a sitemap, a public API, GraphQL, or a rendered browser session.
+
+## Repository architecture
 
 ```text
 Ecommerce-Scrapping-Egypt-2026/
 |-- scrapers/
 |   `-- <retailer>/
-|       |-- scraper.py | scraper.js   # Final scraper
-|       |-- sample_data.csv           # 10 cleaned example records
-|       `-- README.md                 # Retailer-specific instructions
-|-- .gitignore                        # Generated-file exclusions
-|-- DOCUMENTATION.md                  # Technical reference
+|       |-- scraper.py | scraper.js   # Final entry point
+|       |-- sample_data.csv           # 10 cleaned products
+|       `-- README.md                 # Project documentation
+|-- .gitignore
+|-- DOCUMENTATION.md                  # Full technical reference
 |-- LICENSE                           # MIT License
 |-- package.json                      # JavaScript dependencies
 |-- requirements.txt                  # Python dependencies
-`-- README.md                         # Project overview
+`-- README.md                         # Repository landing page
 ```
 
-Each retailer folder is isolated. There is no global runner or hidden dependency between scraper folders.
+Each retailer project is isolated. There is no global runner and no hidden dependency between scraper folders.
 
 ## Technology stack
 
-| Area | Technologies | Purpose |
-|---|---|---|
-| Languages | Python 3.11+, JavaScript, Node.js 20+ | Scraper implementation |
-| HTTP clients | Requests, HTTPX, aiohttp, Axios | HTML, XML, and API requests |
-| HTML parsing | Beautiful Soup, lxml, Cheerio | Static document extraction |
-| Browser automation | Playwright, Selenium | JavaScript-rendered websites |
-| Data sources | REST, GraphQL, sitemaps, storefront APIs | Product discovery and extraction |
-| Data processing | pandas, CSV, JSON | Cleaning, normalization, and export |
-| Concurrency | asyncio, aiohttp, worker pools | Controlled parallel collection |
-| Version control | Git and GitHub | Source history and collaboration |
+| Layer | Technologies |
+|---|---|
+| **Languages** | Python 3.11+, JavaScript, Node.js 20+ |
+| **HTTP** | Requests, HTTPX, aiohttp, Axios, Fetch API |
+| **Parsing** | Beautiful Soup, lxml, Cheerio |
+| **Browser automation** | Playwright, Selenium |
+| **Sources** | HTML, REST, GraphQL, XML sitemaps, storefront APIs |
+| **Processing** | pandas, CSV, JSON |
+| **Concurrency** | asyncio, aiohttp, worker pools |
+| **Collaboration** | Git, GitHub, Markdown |
 
-Not every project uses every technology. Each scraper uses the smallest practical stack for its target.
+Each project README lists the stack detected in that scraper's current source.
 
-## Prerequisites
+## Quick start
 
-Install the tools required for the scraper language:
+### 1. Clone
 
-- Git
-- Python 3.11 or newer
-- Node.js 20 or newer and npm
-- Internet access
-- Chromium, installed through Playwright, for browser-based projects
-
-Verify the main tools:
-
-```powershell
-git --version
-python --version
-node --version
-npm --version
-```
-
-## Setup
-
-### 1. Clone the repository
-
-```powershell
+```bash
 git clone https://github.com/belalhazem511/Ecommerce-Scrapping-Egypt-2026.git
 cd Ecommerce-Scrapping-Egypt-2026
 ```
 
-### 2. Set up Python
+### 2. Choose your runtime
+
+<details>
+<summary><strong>Python setup</strong></summary>
 
 Windows PowerShell:
 
@@ -109,84 +153,102 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-### 3. Set up JavaScript
+</details>
 
-```powershell
+<details>
+<summary><strong>JavaScript setup</strong></summary>
+
+```bash
 npm install
 npx playwright install chromium
 ```
 
-### 4. Verify the environment
+</details>
 
-```powershell
-python -c "import requests, bs4, pandas; print('Python dependencies ready')"
-node -e "require('playwright'); console.log('Node dependencies ready')"
-```
+### 3. Run one project
 
-## Run a scraper
+Python:
 
-Always run a scraper from its own directory so relative output paths work correctly.
-
-Python example:
-
-```powershell
+```bash
 cd scrapers/ariika
 python scraper.py
 ```
 
-JavaScript example:
+JavaScript:
 
-```powershell
+```bash
 cd scrapers/dream2000
 node scraper.js
 ```
 
-Before a full run:
+Read the selected folder's README and inspect its settings before a full run.
 
-1. Read the retailer folder's README.
-2. Review target URLs, output paths, request delay, concurrency, and browser settings.
-3. Use a small product or page limit when the scraper supports one.
-4. Inspect the first output records before continuing.
+## Normalized data contract
 
-## Data contract
+Every **sample_data.csv** contains exactly 10 cleaned and unique records:
 
-Every `sample_data.csv` contains exactly 10 unique cleaned products:
+| Column | Example | Meaning |
+|---|---|---|
+| `name` | Product name | Clean display name |
+| `price` | `499.99` | Current numeric price |
+| `old_price` | `599.99` | Previous price, when available |
+| `discount` | `16.67` | Source discount value |
+| `category` | Electronics | Category or category path |
+| `brand` | Brand name | Product manufacturer or brand |
+| `url` | `https://...` | Product page |
+| `image_url` | `https://...` | Product image |
+| `availability` | in_stock | Source stock state |
+| `seller` | Retailer | Seller, market, or pharmacy |
 
-| Column | Description |
-|---|---|
-| `name` | Product name |
-| `price` | Current numeric price |
-| `old_price` | Previous numeric price, when available |
-| `discount` | Discount value reported by the source |
-| `category` | Product category or category path |
-| `brand` | Product brand |
-| `url` | Product page URL |
-| `image_url` | Product image URL |
-| `availability` | Source stock status |
-| `seller` | Retailer, marketplace, or pharmacy |
+Optional values remain blank when the source does not provide reliable data. Samples demonstrate structure; they are not current or complete catalogs.
 
-Optional values remain blank when the source does not provide reliable data. Samples demonstrate structure and are not current or complete catalogs.
+## Quality standards
 
-## Documentation
+Before accepting a scraper output, verify:
 
-Read [DOCUMENTATION.md](DOCUMENTATION.md) for:
+- Product names and current prices are present.
+- Numeric values use the expected currency and scale.
+- Product and image URLs use valid HTTP or HTTPS addresses.
+- Old prices and discounts are internally consistent.
+- Duplicate products and variants are handled intentionally.
+- Arabic and English text remains valid UTF-8.
+- Categories, brands, availability, and sellers map to the correct columns.
 
-- Complete scraper catalog
-- Cleaning and deduplication rules
-- Data-quality checklist
-- Extraction architecture and data flow
-- Reliability and maintenance guidance
-- Troubleshooting and security practices
+The complete checklist is available in [DOCUMENTATION.md](DOCUMENTATION.md#9-data-quality-checklist).
 
 ## Responsible use
 
+> [!CAUTION]
+> This repository does not grant permission to scrape any website.
+
 - Collect only public data you are permitted to access.
-- Keep request delays and concurrency at respectful levels.
-- Stop on access-denied or rate-limit responses.
+- Review website terms and robots policies.
+- Keep delays and concurrency at respectful levels.
+- Stop on rate-limit or access-denied responses.
 - Do not bypass authentication, CAPTCHA, paywalls, or technical restrictions.
-- Never commit credentials, cookies, browser profiles, or generated datasets.
-- Validate output before using it for analysis or business decisions.
+- Never commit cookies, credentials, browser profiles, or generated catalogs.
 
-## License
+## Documentation
 
-Licensed under the [MIT License](LICENSE). Copyright (c) 2026 Belal Hazem.
+| Resource | Description |
+|---|---|
+| [Technical documentation](DOCUMENTATION.md) | Architecture, catalog, schema, cleaning, quality, security, and troubleshooting |
+| [Project READMEs](scrapers) | Retailer-specific technology, setup, execution, and maintenance |
+| [MIT License](LICENSE) | Reuse and distribution terms |
+
+## Support the project
+
+If this collection helps your learning, research, or engineering work:
+
+1. Star the repository.
+2. Share it with other data and automation engineers.
+3. Report outdated selectors or source changes through GitHub Issues.
+4. Keep contributions focused, documented, and respectful of target websites.
+
+<div align="center">
+
+**Built for practical, maintainable e-commerce data collection in Egypt.**
+
+[Back to top](#egypt-e-commerce-web-scrapers)
+
+</div>
