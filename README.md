@@ -66,3 +66,7 @@ git branch -M main
 git remote add origin https://github.com/YOUR_NAME/YOUR_REPOSITORY.git
 git push -u origin main
 ```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

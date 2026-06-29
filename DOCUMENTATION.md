@@ -266,4 +266,4 @@ When replacing a scraper, update its sample data and README in the same change.
 
 ## 15. License
 
-No open-source license is currently included. Without a license, reuse and redistribution rights are not automatically granted. Add an appropriate license before inviting external reuse or contributions.
+This project is available under the MIT License. See [LICENSE](LICENSE) for the complete terms.
