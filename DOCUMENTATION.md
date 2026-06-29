@@ -35,6 +35,37 @@ Historical versions, debug tools, test scripts, cached pages, full datasets, arc
 
 The scrapers are independent. Running one project does not automatically run the others.
 
+### Design principles
+
+- **Isolation:** each retailer is a self-contained project.
+- **Single entry point:** each folder exposes only `scraper.py` or `scraper.js`.
+- **Consistent examples:** every project includes the same cleaned sample schema.
+- **Source-only repository:** generated catalogs, caches, and browser artifacts stay outside Git.
+- **Explicit operation:** scrapers run individually so operators can review target-specific settings first.
+
+### Data flow
+
+```text
+Target website or API
+        |
+        v
+Discovery and pagination
+        |
+        v
+Product extraction
+        |
+        v
+Normalization and deduplication
+        |
+        v
+CSV or JSON output
+        |
+        v
+Quality validation
+```
+
+The exact discovery and extraction stages vary by retailer. Some scripts consume public APIs or sitemaps, while others render pages in a browser.
+
 ## 3. Supported projects
 
 | Project | Project | Project |
