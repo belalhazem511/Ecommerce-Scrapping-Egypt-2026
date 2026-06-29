@@ -1,72 +1,116 @@
-# Web scraping scripts
+# Egypt E-commerce Web Scrapers
 
-A simple collection of 39 website scrapers.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB)
+![Node.js](https://img.shields.io/badge/Node.js-20%2B-339933)
+![Scrapers](https://img.shields.io/badge/Scrapers-39-blue)
 
-See [DOCUMENTATION.md](DOCUMENTATION.md) for complete setup, data schema, quality, maintenance, and responsible-use guidance.
+A curated collection of 39 Python and JavaScript scrapers for Egyptian retail and e-commerce websites. Every project provides one focused scraper, concise instructions, and 10 cleaned sample records in a shared product schema.
 
-Each folder inside `scrapers` contains only:
+> [!IMPORTANT]
+> Website structures and policies change. Review the target website's terms, robots policy, and rate limits before running any scraper.
 
-- One final `scraper.py` or `scraper.js`
-- One `sample_data.csv` with 10 cleaned example products
-- One `README.md` with instructions
+## Key features
 
-Old versions, tests, debug scripts, cached pages, datasets, archives, and helper files were removed from this GitHub copy. The original workspace was not changed.
+- 39 independently runnable retailer scrapers
+- Python and JavaScript implementations
+- Static HTML, API, sitemap, GraphQL, and browser-automation strategies
+- Consistent cleaned sample schema across all projects
+- Minimal project folders with no debug scripts or full datasets
+- Shared dependency files and detailed technical documentation
 
-All samples use the same columns: name, price, old price, discount, category, brand, product URL, image URL, availability, and seller. Blank optional values mean that field was not available in the source data.
+## Repository architecture
 
-## Install
+```text
+Ecommerce-Scrapping-Egypt-2026/
+├── scrapers/
+│   └── <retailer>/
+│       ├── scraper.py | scraper.js   # Final scraper
+│       ├── sample_data.csv           # 10 cleaned records
+│       └── README.md                 # Project instructions
+├── .gitignore                        # Generated-file exclusions
+├── DOCUMENTATION.md                  # Technical reference
+├── LICENSE                           # MIT License
+├── package.json                      # JavaScript dependencies
+├── requirements.txt                  # Python dependencies
+└── README.md                         # Project overview
+```
 
-For Python scrapers:
+Each retailer folder is independent. There is no global runner and no hidden dependency between scraper folders.
+
+## Quick start
+
+### Python scraper
 
 ```powershell
+git clone https://github.com/belalhazem511/Ecommerce-Scrapping-Egypt-2026.git
+cd Ecommerce-Scrapping-Egypt-2026
+
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 playwright install chromium
-```
 
-For JavaScript scrapers:
-
-```powershell
-npm install
-npx playwright install chromium
-```
-
-## Run a scraper
-
-Open the required folder and read its README:
-
-```powershell
 cd scrapers/ariika
 python scraper.py
 ```
 
-or:
+On macOS or Linux, activate the environment with `source .venv/bin/activate`.
+
+### JavaScript scraper
 
 ```powershell
+git clone https://github.com/belalhazem511/Ecommerce-Scrapping-Egypt-2026.git
+cd Ecommerce-Scrapping-Egypt-2026
+
+npm install
+npx playwright install chromium
+
 cd scrapers/dream2000
 node scraper.js
 ```
 
-## Important
+Always read the retailer folder's README and inspect the scraper settings before starting a full run.
 
-- Review the script settings before running it.
-- Start with a small scrape when possible.
-- Respect website terms, `robots.txt`, and rate limits.
-- Never commit generated data, cookies, passwords, or API keys.
-- Website APIs and selectors can change.
+## Data contract
 
-## Upload to GitHub
+Every `sample_data.csv` contains exactly 10 unique cleaned products using this schema:
 
-```powershell
-git init
-git add .
-git commit -m "Add scraping scripts"
-git branch -M main
-git remote add origin https://github.com/YOUR_NAME/YOUR_REPOSITORY.git
-git push -u origin main
-```
+| Column | Description |
+|---|---|
+| `name` | Product name |
+| `price` | Current numeric price |
+| `old_price` | Previous numeric price, when available |
+| `discount` | Source discount value |
+| `category` | Product category or path |
+| `brand` | Product brand |
+| `url` | Product page URL |
+| `image_url` | Product image URL |
+| `availability` | Stock status reported by the source |
+| `seller` | Retailer, marketplace, or pharmacy |
+
+Optional values remain blank when the source does not provide reliable data. The samples demonstrate structure and are not current or complete product catalogs.
+
+## Technology
+
+The collection uses tools appropriate to each target:
+
+- Requests, HTTPX, aiohttp, Beautiful Soup, and lxml
+- Playwright and Selenium for rendered pages
+- Public JSON, GraphQL, sitemap, and storefront endpoints
+- pandas and CSV/JSON exports for data processing
+
+See [DOCUMENTATION.md](DOCUMENTATION.md) for the scraper catalog, cleaning rules, quality checklist, troubleshooting, security, and maintenance guidance.
+
+## Responsible use
+
+- Collect only public data you are permitted to access.
+- Keep request delays and concurrency at respectful levels.
+- Stop on access-denied or rate-limit responses.
+- Do not bypass authentication, CAPTCHA, or technical restrictions.
+- Never commit credentials, cookies, browser profiles, or generated datasets.
+- Validate output before using it for analysis or business decisions.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE). Copyright (c) 2026 Belal Hazem.
