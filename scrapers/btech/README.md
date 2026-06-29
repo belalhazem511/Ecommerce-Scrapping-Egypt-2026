@@ -1,33 +1,101 @@
-﻿# Btech scraper
+﻿# B.TECH Scraper
 
-## Files
+![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB)
+![Sample](https://img.shields.io/badge/Sample-10_cleaned_rows-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-- scraper.py - the final scraper
-- sample_data.csv - 10 cleaned example products
-- README.md - usage and cleanup notes
+## Overview
 
-## What happened
+Electronics, appliances, and technology products.
 
-The workspace contained production scripts, older versions, tests, debug tools, helpers, and generated datasets. This folder keeps only the clearest final scraping script. Everything else was excluded from this GitHub copy to make the project easier to understand.
+This is an independently runnable project in the **Egypt E-commerce Web Scrapers** collection. It contains one final scraper and a cleaned sample that demonstrates the shared output contract.
 
-The original workspace files were not changed.
+## Capabilities
 
-## Requirements
+- Structured product names, prices, categories, and URLs
+- Sitemap-based URL discovery
+- Controlled concurrent collection
+- Checkpoint or resume support
+- CSV export
+- JSON processing or export
 
-Python 3.11+ is required. Install the shared dependencies from the repository root before running this script.
+Capabilities are detected from the current source. Website changes may affect runtime behavior.
+
+## Project files
+
+| File | Purpose |
+|---|---|
+| **scraper.py** | Final scraper entry point |
+| **sample_data.csv** | 10 cleaned and deduplicated example products |
+| **README.md** | Setup, usage, quality, and maintenance guidance |
+
+## Technology
+
+- **Runtime:** Python 3.11+
+- **Detected stack:** Requests
+- **Output model:** normalized retail product records
+
+## Setup
+
+Run this setup from the repository root:
+
+~~~powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+playwright install chromium
+~~~
+
+Chromium is only required when the scraper uses browser automation.
 
 ## Run
 
-    python scraper.py
+~~~powershell
+cd scrapers/btech
+python scraper.py
+~~~
 
-The scraper controls its own output names and request settings. Review the constants near the beginning of the script before running a large scrape.
+Run from this directory so relative output paths resolve correctly.
 
-## Important
+## Sample data
 
-- Check the website terms and robots policy.
-- Start with a small run when a limit option is available.
-- Keep request delays enabled.
-- Never commit outputs, cookies, credentials, or browser profiles.
-- Website APIs and selectors can change over time.
+The included **sample_data.csv** contains exactly 10 unique cleaned records:
 
+~~~text
+name, price, old_price, discount, category, brand,
+url, image_url, availability, seller
+~~~
 
+The sample demonstrates structure only. Prices, promotions, stock, and URLs may differ from the live website.
+
+## Pre-run checklist
+
+1. Review target URLs, locale, and store settings in **scraper.py**.
+2. Check delay, concurrency, timeout, retry, and browser settings.
+3. Confirm output paths and available disk space.
+4. Start with a small page or product limit when supported.
+5. Inspect the first records before starting a complete run.
+6. Stop on access-denied or rate-limit responses.
+
+## Data-quality checklist
+
+- Product name and current price are present.
+- Prices are numeric and use the expected currency.
+- Product and image URLs are valid HTTP or HTTPS links.
+- Duplicate products and variants are handled intentionally.
+- Arabic and English text remains UTF-8 encoded.
+- Discounts agree with current and old prices when both exist.
+
+## Maintenance
+
+If extraction fails, check the HTTP status, content type, and final URL first. Compare current HTML or API fields with the scraper selectors and mappings, then retest with a small limit.
+
+## Responsible use
+
+Collect only public data you are permitted to access. Review the target website's terms and robots policy, keep request rates low, and do not bypass authentication, CAPTCHA, paywalls, or other access controls.
+
+## Documentation
+
+- [Collection documentation](../../DOCUMENTATION.md)
+- [Main project README](../../README.md)
+- [MIT License](../../LICENSE)
